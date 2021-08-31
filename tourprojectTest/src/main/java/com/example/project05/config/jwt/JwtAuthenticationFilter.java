@@ -45,7 +45,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			loginReqDto.setUsername(user.getUsername());
 			loginReqDto.setPassword(user.getPassword());
 		
-		
+		// 로그인 실패 시 null 을 리턴하기 위해 트라이 캐치문을 천제로 했음.
 		
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 				loginReqDto.getUsername(), loginReqDto.getPassword());
