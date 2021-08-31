@@ -44,9 +44,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			System.out.println(user);
 			loginReqDto.setUsername(user.getUsername());
 			loginReqDto.setPassword(user.getPassword());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		
 		
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
@@ -61,6 +59,9 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
 		System.out.println("로그인 완료 : " + principalDetails.getUser().getUsername());
 		return authentication;
+		} catch (Exception e) {
+			return null;
+		}
 		// 리턴하면 authentication가 세션에 저장됨.
 		// 리턴하는이유? 권한 관리를 시큐리티가 대신 해주기 때문에 편할려고
 		// 굳이 jwt 사용하면서 세션에 넣는 이유는 권한 관리 때문에
