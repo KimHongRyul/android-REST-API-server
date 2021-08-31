@@ -17,7 +17,7 @@ public class CorsConfig {
 		config.addAllowedOrigin("*");
 		config.addAllowedHeader("*");
 		config.addAllowedMethod("*");
-		source.registerCorsConfiguration("/api/**", config); // 인증이 필요한 주소는 api/** 주소로 설정
+		source.registerCorsConfiguration("/**", config); // cors 토큰을 사용하는 주소설정 해당 주소/** 을 요청하면 cors를 열어준다
 		return new CorsFilter(source);
 	}
 }

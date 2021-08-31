@@ -28,19 +28,19 @@ public class AuthController {
 
 	private final AuthService authService;
 	
-	@GetMapping("/api/v1/user")
+	@GetMapping("/user")
 	public String user() {
 		return "user";
 	}
 	
-	@GetMapping("/api/v1/manager")
+	@GetMapping("/manager")
 	public String manager() {
 		return "manager";
 	}
 	
 	@PostMapping("/auth/signup")
 	public CMRespDto<?> signup(@RequestBody @Valid SignupDto signupDto, BindingResult bindingResult) {
-		
+		System.out.println("회원가입 시작");
 		if(bindingResult.hasErrors()) {
 			Map<String,String> errorMap = new HashMap<>();
 			for(FieldError error:bindingResult.getFieldErrors()) {
