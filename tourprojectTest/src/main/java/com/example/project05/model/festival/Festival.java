@@ -1,9 +1,12 @@
 package com.example.project05.model.festival;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,4 +32,7 @@ public class Festival {
 	private String traffic;
 	private String lat;
 	private String lng;
+	
+	@OneToMany(mappedBy = "festival")
+	private List<FestivalFav> likes;
 }
