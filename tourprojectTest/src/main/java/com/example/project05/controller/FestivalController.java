@@ -36,4 +36,5 @@ public class FestivalController {
 		return new CMRespDto<>(1,"축제상세보기",festival);
 	}
 	
+	
 }

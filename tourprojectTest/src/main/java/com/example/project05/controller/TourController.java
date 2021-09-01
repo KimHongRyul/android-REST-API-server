@@ -30,5 +30,11 @@ public class TourController {
 		Tour tour = tourService.tourOne(id);
 		return new CMRespDto<>(1,"관광지상세보기",tour);
 	}
+	@GetMapping("/tour/area/{area}")
+	public CMRespDto<?> tourArea(@PathVariable String area) {
+		System.out.println(area);
+		List<Tour> tours = tourService.tourArea(area);
+		return new CMRespDto<>(1,"지역별관광지",tours);
+	}
 	
 }

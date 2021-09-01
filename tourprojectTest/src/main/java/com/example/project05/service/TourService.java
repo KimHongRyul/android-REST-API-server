@@ -21,10 +21,16 @@ public class TourService {
 		List<Tour> tours = tourRepository.findAll();
 		return tours;
 	}
-	
+	@Transactional
 	public Tour tourOne(int id) {
 		Tour tour = tourRepository.findById(id).get();
 		return tour;
 	}
+	@Transactional
+	public List<Tour> tourArea(String area) {
+		List<Tour> tours = tourRepository.mArea(area);
+		return tours;
+	}
+	
 	
 }
