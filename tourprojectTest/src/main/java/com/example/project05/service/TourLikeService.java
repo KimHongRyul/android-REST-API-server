@@ -17,8 +17,10 @@ public class TourLikeService {
 	public void tourLikes(int userId, int tourId) {
 		tourLikeRepository.mLikes(userId,tourId);
 	}
+	
 	@Transactional
 	public void tourUnLikes(int userId, int tourId) {
 		tourLikeRepository.mUnLikes(userId,tourId);
 	}
+	
 }
